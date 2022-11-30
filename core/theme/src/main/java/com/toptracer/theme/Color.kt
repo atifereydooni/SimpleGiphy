@@ -1,4 +1,4 @@
-package com.toptracer.toptracer.ui.theme
+package com.toptracer.theme
 
 import androidx.compose.ui.graphics.Color
 
