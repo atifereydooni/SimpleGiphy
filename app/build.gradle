@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -54,6 +56,11 @@ dependencies {
     implementation(Dependencies.androidMaterial)
     implementation(Dependencies.androidxLifecycle)
     testImplementation(Dependencies.jUnit)
+
+    //hilt
+    implementation(Dependencies.hilt)
+    implementation(Dependencies.hiltNavigation)
+    kapt(Dependencies.hiltCompiler)
 
     //compose
     implementation(Dependencies.activityCompose)

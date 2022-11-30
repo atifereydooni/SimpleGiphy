@@ -4,6 +4,12 @@ object Dependencies {
     const val androidMaterial = "com.google.android.material:material:${Versions.androidMaterial}"
     const val androidxLifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.androidxLifecycle}"
 
+    // hilt
+    const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltNavigation = "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigation}"
+    const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val hiltAndroidTest = "com.google.dagger:hilt-android-testing:${Versions.hilt}"
+
     //compose
     const val activityCompose = "androidx.activity:activity-compose:${Versions.activityCompose}"
     const val composeUI = "androidx.compose.ui:ui:${Versions.compose}"
