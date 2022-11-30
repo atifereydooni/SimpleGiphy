@@ -18,6 +18,14 @@ object Versions {
     const val composeNavigation = "2.5.3"
     const val accompanistNavigation = "0.22.0-rc"
 
+    //retrofit
+    const val retrofit = "2.9.0"
+    const val converterGson = "2.6.2"
+    const val interceptor = "4.9.2"
+
+    //coil
+    const val coil = "2.1.0"
+
     // testing
     const val jUnit = "4.13.2"
 }

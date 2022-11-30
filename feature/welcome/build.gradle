@@ -51,6 +51,17 @@ dependencies {
     implementation(Dependencies.composeUiTooling)
     implementation(Dependencies.composeMaterial)
 
+    //retrofit
+    implementation(Dependencies.retrofit)
+    implementation(Dependencies.interceptor)
+    api(Dependencies.converterGson)
+
+    //coil
+    implementation(Dependencies.coilGif)
+    implementation(Dependencies.coil)
+    implementation(Dependencies.coilCompose)
+
     //test
     testImplementation(Dependencies.jUnit)
+    androidTestImplementation(Dependencies.jUnit)
 }

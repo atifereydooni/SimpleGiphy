@@ -18,6 +18,16 @@ object Dependencies {
     const val composeNavigation = "androidx.navigation:navigation-compose:${Versions.composeNavigation}"
     const val accompanistNavigation = "com.google.accompanist:accompanist-navigation-animation:${Versions.accompanistNavigation}"
 
+    //retrofit
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val converterGson = "com.squareup.retrofit2:converter-gson:${Versions.converterGson}"
+    const val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.interceptor}"
+
+    //coil
+    const val coilGif = "io.coil-kt:coil-gif:${Versions.coil}"
+    const val coil = "io.coil-kt:coil:${Versions.coil}"
+    const val coilCompose = "io.coil-kt:coil-compose:${Versions.coil}"
+
     // testing
     const val jUnit = "junit:junit:${Versions.jUnit}"
 

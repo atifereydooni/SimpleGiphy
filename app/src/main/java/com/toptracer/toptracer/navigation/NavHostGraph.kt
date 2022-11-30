@@ -9,7 +9,8 @@ import com.toptracer.login.presentation.LoginViewModel
 import com.toptracer.navigation.destinations.LoginDestination
 import com.toptracer.navigation.destinations.NavigationDestination
 import com.toptracer.navigation.destinations.WelcomeDestination
-import com.toptracer.welcome.WelcomeScreen
+import com.toptracer.welcome.presentation.WelcomeScreen
+import com.toptracer.welcome.presentation.WelcomeViewModel
 
 private fun composableDestinations(): Map<NavigationDestination, @Composable () -> Unit> =
     mapOf(
@@ -22,7 +23,8 @@ private fun composableDestinations(): Map<NavigationDestination, @Composable () 
             )
         },
         WelcomeDestination to {
-            WelcomeScreen()
+            val viewModel: WelcomeViewModel = hiltViewModel()
+            WelcomeScreen(viewModel.welcomeState.value, viewModel::onLogoutClicked)
         }
     )
 
@@ -32,7 +34,14 @@ fun NavGraphBuilder.addComposableDestinations() {
         composable(
             destination.route, destination.arguments, destination.deepLinks
         ) {
-            entry.value()
+            if (destination.route.startsWith(WelcomeDestination.WELCOME_ROUTE)) {
+                val viewModel: WelcomeViewModel = hiltViewModel()
+                viewModel.welcomeState.value = viewModel.welcomeState.value
+                    .copy(username = it.arguments?.getString(WelcomeDestination.Params.USERNAME))
+                WelcomeScreen(viewModel.welcomeState.value, viewModel::onLogoutClicked)
+            } else {
+                entry.value()
+            }
         }
     }
 }

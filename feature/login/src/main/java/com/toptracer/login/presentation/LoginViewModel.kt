@@ -27,7 +27,7 @@ class LoginViewModel
     private fun login(username: String, password: String) {
         if (username.isValid() && password.isValid()) {
             if (password == "password") {
-                navigateToWelcomeScreen()
+                navigateToWelcomeScreen(username)
             } else {
                 loginState.value = loginState.value.copy(
                     errorMessage = Error.WrongPassword,
@@ -48,9 +48,9 @@ class LoginViewModel
         )
     }
 
-    private fun navigateToWelcomeScreen() {
+    private fun navigateToWelcomeScreen(username: String) {
         viewModelScope.launch {
-            navigationManager.navigateTo(WelcomeDestination.route) {
+            navigationManager.navigateTo(WelcomeDestination.createWelcomeRoute(username)) {
                 popUpTo(LoginDestination.route) {
                     inclusive = true
                 }
