@@ -50,6 +50,7 @@ android {
 
 dependencies {
     implementation(project(':core:theme'))
+    implementation(project(':core:navigation'))
 
     implementation(Dependencies.androidxCore)
     implementation(Dependencies.appCompat)
@@ -67,5 +68,6 @@ dependencies {
     implementation(Dependencies.composeUI)
     implementation(Dependencies.composeUiTooling)
     implementation(Dependencies.composeMaterial)
-
+    implementation(Dependencies.composeNavigation)
+    implementation(Dependencies.accompanistNavigation)
 }

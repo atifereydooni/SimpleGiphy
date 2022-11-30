@@ -1,5 +1,5 @@
 object Versions {
-    const val kotlinCompilerExtensionVersion = "1.3.2"
+    const val kotlinCompilerExtensionVersion = "1.1.1"
     const val kotlin = "1.6.10"
 
     //hilt
@@ -15,6 +15,8 @@ object Versions {
     const val activityCompose = "1.6.1"
     const val compose = "1.3.1"
     const val composeUiVersion = "1.7.20"
+    const val composeNavigation = "2.5.3"
+    const val accompanistNavigation = "0.22.0-rc"
 
     // testing
     const val jUnit = "4.13.2"
