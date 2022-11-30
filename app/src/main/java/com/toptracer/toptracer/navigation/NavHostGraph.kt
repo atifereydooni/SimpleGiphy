@@ -8,6 +8,8 @@ import com.toptracer.login.presentation.LoginScreen
 import com.toptracer.login.presentation.LoginViewModel
 import com.toptracer.navigation.destinations.LoginDestination
 import com.toptracer.navigation.destinations.NavigationDestination
+import com.toptracer.navigation.destinations.WelcomeDestination
+import com.toptracer.welcome.WelcomeScreen
 
 private fun composableDestinations(): Map<NavigationDestination, @Composable () -> Unit> =
     mapOf(
@@ -18,6 +20,9 @@ private fun composableDestinations(): Map<NavigationDestination, @Composable () 
                 viewModel::onButtonClicked,
                 viewModel::onErrorDismissed
             )
+        },
+        WelcomeDestination to {
+            WelcomeScreen()
         }
     )
 

@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.toptracer.navigation.INavigationManager
 import com.toptracer.navigation.destinations.LoginDestination
+import com.toptracer.navigation.destinations.WelcomeDestination
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -41,7 +42,7 @@ class LoginViewModel
         }
     }
 
-    fun onErrorDismissed(){
+    fun onErrorDismissed() {
         loginState.value = loginState.value.copy(
             error = false
         )
@@ -49,7 +50,7 @@ class LoginViewModel
 
     private fun navigateToWelcomeScreen() {
         viewModelScope.launch {
-            navigationManager.navigateTo("WelcomeScreen") {
+            navigationManager.navigateTo(WelcomeDestination.route) {
                 popUpTo(LoginDestination.route) {
                     inclusive = true
                 }

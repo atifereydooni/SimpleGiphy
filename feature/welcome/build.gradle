@@ -1,25 +1,20 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
 }
 
 android {
-    namespace 'com.toptracer.toptracer'
+    namespace 'com.toptracer.welcome'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.toptracer.toptracer"
         minSdk 21
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -41,35 +36,21 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion Versions.kotlinCompilerExtensionVersion
     }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
-    }
 }
 
 dependencies {
-    implementation(project(':core:theme'))
     implementation(project(':core:navigation'))
-    implementation(project(':feature:login'))
-    implementation(project(':feature:welcome'))
 
-    implementation(Dependencies.androidxCore)
-    implementation(Dependencies.appCompat)
-    implementation(Dependencies.androidMaterial)
-    implementation(Dependencies.androidxLifecycle)
-    testImplementation(Dependencies.jUnit)
-
-    //hilt
     implementation(Dependencies.hilt)
-    implementation(Dependencies.hiltNavigation)
     kapt(Dependencies.hiltCompiler)
+    implementation(Dependencies.composeNavigation)
 
     //compose
     implementation(Dependencies.activityCompose)
     implementation(Dependencies.composeUI)
     implementation(Dependencies.composeUiTooling)
     implementation(Dependencies.composeMaterial)
-    implementation(Dependencies.composeNavigation)
-    implementation(Dependencies.accompanistNavigation)
+
+    //test
+    testImplementation(Dependencies.jUnit)
 }
