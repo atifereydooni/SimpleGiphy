@@ -9,6 +9,7 @@ import com.toptracer.navigation.INavigationManager
 import com.toptracer.navigation.NavigationEvent
 import com.toptracer.navigation.destinations.LoginDestination
 
+
 @Composable
 fun MainScaffold(
     navigationManager: INavigationManager

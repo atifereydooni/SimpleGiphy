@@ -35,5 +35,8 @@ android {
 dependencies {
     implementation(Dependencies.hilt)
     kapt(Dependencies.hiltCompiler)
+    implementation(Dependencies.composeUI)
+    implementation(Dependencies.composeUiTooling)
+    implementation(Dependencies.composeMaterial)
     implementation(Dependencies.composeNavigation)
 }

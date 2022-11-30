@@ -1,5 +1,5 @@
 package com.toptracer.navigation.destinations
 
 object LoginDestination : NavigationDestination {
-    override val route = "LoginDestination"
+    override val route = "login"
 }
